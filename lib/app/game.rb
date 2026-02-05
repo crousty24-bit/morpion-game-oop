@@ -18,3 +18,11 @@ class Game
   end    
 
 end
+
+#Le mettre ici ?
+
+  def play_turn
+    #TO DO : une méthode qui :
+    #1) demande au bon joueur ce qu'il souhaite faire
+    #2) change la BoardCase jouée en fonction de la valeur du joueur (X ou O)
+  end
