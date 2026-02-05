@@ -1,5 +1,6 @@
+require 'pry'
 class Show
-  def initialize(board)
+  def initialize(board) #need to add in Game initialize : @show = Show.new(board) when Board.new is created
     @board = board
   end
 
@@ -20,16 +21,16 @@ class Show
     puts "C  | #{cell("C1")} | #{cell("C2")} | #{cell("C3")} |"
     puts separator
     puts ""
-    #TO DO : affiche sur le terminal l'objet de classe Board en entrée. S'active avec un Show.new.show_board(instance_de_Board)
   end
 
   private #prevent method cell to be call by other method external of class Show (Game, Board, Player, etc.)
   def cell(position)
-    value = @board.cases[position].value #refers to Board / attr cases [] / then acces to case key "A1" / then its value = "X", "O" 
-    if value.nil? 
+    value = @board.cases[position].case_state #refers to object Board / attr @cases hash / then acces to case key "A1" / then its value = "X", "O" 
+    if value.nil?
       " " 
     else 
       value
     end
   end
 end
+#binding.pry
