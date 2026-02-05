@@ -40,7 +40,8 @@ class Game
       success = @board.play(position, @current_player.symbol)
       puts "Invalid move, try again." if success == false
     end
-    switch_players
+    finished = game_end
+    switch_players unless finished
   end
 
   def new_round
@@ -55,13 +56,13 @@ class Game
     result = @board.victory?
     if result == "Draw"
       @status = "draw"
-      @show.show_board(@board)
+      @show.show_board
       puts "It's a draw!"
       return true   # game ended
     end
     if result
       @status = @current_player
-      @show.show_board(@board)
+      @show.show_board
       puts "#{@current_player.name} wins!"
       return true   # game ended
     end

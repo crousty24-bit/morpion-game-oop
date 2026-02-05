@@ -1,4 +1,3 @@
-require 'pry'
 class Show
   def initialize(board) #need to add in Game initialize : @show = Show.new(board) when Board.new is created
     @board = board
@@ -8,9 +7,9 @@ class Show
     system("clear") || system("cls") #allow using cmd clear or cls to empty Terminal before showing board again
   end
 
-  def show_board(board)
+  def show_board
     clear_screen
-    separator = "-" * 13
+    separator = "-" * 16
     puts ""
     puts "     1   2   3"
     puts separator
@@ -33,4 +32,3 @@ class Show
     end
   end
 end
-#binding.pry

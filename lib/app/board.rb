@@ -1,3 +1,12 @@
+require 'bundler'
+Bundler.require
+
+$:.unshift File.expand_path("./../lib", __FILE__)
+require 'app/player'
+require 'app/game'
+require 'views/show'
+
+
 class Board
   attr_accessor :cases, :count_turn
 
@@ -23,11 +32,9 @@ class Board
       if case1_state == case2_state && case1_state == case3_state && case1_state != " "
         return case1_state
       end
-      if count_turn ==  9
-        return "Draw"
-      end
     end
-    return nil
+    return "Draw" if @count_turn == 9
+    nil
   end
 
   def play(position, symbol)
