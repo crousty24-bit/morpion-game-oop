@@ -1,3 +1,4 @@
+require 'lolize/auto'
 class Show
   def initialize(board) #need to add in Game initialize : @show = Show.new(board) when Board.new is created
     @board = board
