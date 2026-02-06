@@ -6,10 +6,8 @@ require 'app/player'
 require 'app/game'
 require 'views/show'
 
-
 class Board
   attr_accessor :cases, :count_turn
-
   def initialize
     @cases = {} #Initializing board's hash
     @count_turn = 0
